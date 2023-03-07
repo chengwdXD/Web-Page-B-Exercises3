@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set("Asia/Teipei");
+date_default_timezone_set("Asia/Taipei");
 session_start();
 class DB{
     protected $dsn="mysql:host=locahost;charset;dbname=db03";
@@ -18,6 +18,7 @@ class DB{
         4=>'20:00~22:00',
         5=>'22:00~24:00',
     ];
+    
     public function __construct($table)
     {
         $this->table=$table;

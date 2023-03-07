@@ -1,4 +1,4 @@
-<?php include_once "./api.base.php";
+<?php include_once "./api/base.php";
   if(!empty($_POST)){
     if($_POST['acc']=='admin' && $_POST['pw']='1234'){
       $_SESSION['login']=1;
@@ -29,6 +29,7 @@
     <a href="index.php?do=order">線上訂票</a> 
     <a href="#">會員系統</a> 
     <a href="back.php">管理系統</a> 
+    </div>
   <div id="text"> <span class="ct">最新活動</span>
     <marquee direction="right">
     ABC影城票價全面八折優惠1個月
@@ -54,7 +55,7 @@
    }
    ?>
     </div>
-  </div>
+ 
   <div id="bo"> ©Copyright 2010~2014 ABC影城 版權所有 </div>
 </div>
 </body>
