@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>影城</title>
-<link rel="stylesheet" href="css/css.css">
+<link rel="stylesheet" href="./css/css.css">
 <link href="./css/s2.css" rel="stylesheet" type="text/css">
 <script src="./js/jquery-1.9.1.min.js"></script>
 <script src="./js/js.js"></script>
@@ -25,9 +25,25 @@
     ABC影城票價全面八折優惠1個月
     </marquee>
   </div>
-  <div id="mm">
-   
-    
+  <div id="mm" style="height:500px;">
+   <?php
+   if(isset($_SESSION['login'])){
+    $do=$_GET['do']??'main';
+    $file="./back/".$do.".php";
+    include "./back/nav.php";
+    if(file_exists($file)){
+      include $file;
+    }else{
+      include "./back/main.php";
+    }
+   }else{
+    if(isset($error)){
+      echo $error;
+    }else{
+      include "./back/login.php";
+    }
+   }
+   ?>
     </div>
   </div>
   <div id="bo"> ©Copyright 2010~2014 ABC影城 版權所有 </div>
